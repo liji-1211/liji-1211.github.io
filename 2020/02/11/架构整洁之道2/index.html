@@ -79,18 +79,16 @@
 
 
 
-<meta name="description" content="从小的教育从小被教育好好读书，将来才能有出息，但不知道从什么时候开始，对知识，只能被动接受；对学习，只能靠老师监督。或许从父母把他们应该要尽的教育责任给了学校，从那时开始，我可能就只能被动接受学习，而我还不知道。 塔拉从小教育就像局域网一样，还有着上帝一样的父亲。我虽然对塔拉的遭遇感到同情与赞叹，但我更想知道到底是什么力量能让这样的一个家庭诞生出三个博士。是从小环境磨砺出来的坚韧；是不被世俗束">
+<meta name="description" content="组件前面讲的SOLID是如何构成组件的基本原则，现在我们要讲组件之间应该怎么把它们结合起来构成一个真正的软件。 组件这个词，如果在我们公司或者广义上的理解(c++)，应该指的是对象。但这本书组件即一个库，像so,DLL，这种部署单元就是组件，因此后续提到组件都是指一个库。 先思考下我们应该把哪些类组合成一个组件？这就是第一个要讲的组件聚合   REP：复用&#x2F;发布等同原则    CCP：共同闭包原则">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你当像鸟飞往你的山">
-<meta property="og:url" content="http://yoursite.com/2020/01/24/%E4%BD%A0%E5%BD%93%E5%83%8F%E9%B8%9F%E9%A3%9E%E5%BE%80%E4%BD%A0%E7%9A%84%E5%B1%B1/index.html">
+<meta property="og:title" content="架构整洁之道2">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%932/index.html">
 <meta property="og:site_name" content="liji Blog">
-<meta property="og:description" content="从小的教育从小被教育好好读书，将来才能有出息，但不知道从什么时候开始，对知识，只能被动接受；对学习，只能靠老师监督。或许从父母把他们应该要尽的教育责任给了学校，从那时开始，我可能就只能被动接受学习，而我还不知道。 塔拉从小教育就像局域网一样，还有着上帝一样的父亲。我虽然对塔拉的遭遇感到同情与赞叹，但我更想知道到底是什么力量能让这样的一个家庭诞生出三个博士。是从小环境磨砺出来的坚韧；是不被世俗束">
-<meta property="og:image" content="http://yoursite.com/images/%E4%BD%A0%E5%BD%93%E5%83%8F%E9%B8%9F%E9%A3%9E%E5%BE%80%E4%BD%A0%E7%9A%84%E5%B1%B1.jpeg">
-<meta property="article:published_time" content="2020-01-24T00:56:09.000Z">
-<meta property="article:modified_time" content="2020-02-11T12:46:30.094Z">
+<meta property="og:description" content="组件前面讲的SOLID是如何构成组件的基本原则，现在我们要讲组件之间应该怎么把它们结合起来构成一个真正的软件。 组件这个词，如果在我们公司或者广义上的理解(c++)，应该指的是对象。但这本书组件即一个库，像so,DLL，这种部署单元就是组件，因此后续提到组件都是指一个库。 先思考下我们应该把哪些类组合成一个组件？这就是第一个要讲的组件聚合   REP：复用&#x2F;发布等同原则    CCP：共同闭包原则">
+<meta property="article:published_time" content="2020-02-11T13:30:05.000Z">
+<meta property="article:modified_time" content="2020-02-12T12:24:33.827Z">
 <meta property="article:author" content="liji">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/%E4%BD%A0%E5%BD%93%E5%83%8F%E9%B8%9F%E9%A3%9E%E5%BE%80%E4%BD%A0%E7%9A%84%E5%B1%B1.jpeg">
 
 
 
@@ -120,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/24/你当像鸟飞往你的山/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/11/架构整洁之道2/"/>
 
 
 
 
 
-  <title>你当像鸟飞往你的山 | liji Blog</title>
+  <title>架构整洁之道2 | liji Blog</title>
   
 
 
@@ -243,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/24/%E4%BD%A0%E5%BD%93%E5%83%8F%E9%B8%9F%E9%A3%9E%E5%BE%80%E4%BD%A0%E7%9A%84%E5%B1%B1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%932/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liji">
@@ -260,7 +258,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">你当像鸟飞往你的山</h1>
+          <h1 class="post-title" itemprop="name headline">架构整洁之道2</h1>
         
 
         <div class="post-meta">
@@ -272,8 +270,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-24T08:56:09+08:00">
-                2020-01-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-11T21:30:05+08:00">
+                2020-02-11
               </time>
             
 
@@ -310,15 +308,40 @@
       
 
       
-        <img src="/images/你当像鸟飞往你的山.jpeg" alt="你当像鸟飞往你的山" style="zoom:50%;" />
-
-<h1 id="从小的教育"><a href="#从小的教育" class="headerlink" title="从小的教育"></a>从小的教育</h1><p>从小被教育好好读书，将来才能有出息，但不知道从什么时候开始，对知识，只能被动接受；对学习，只能靠老师监督。或许从父母把他们应该要尽的教育责任给了学校，从那时开始，我可能就只能被动接受学习，而我还不知道。</p>
-<p>塔拉从小教育就像局域网一样，还有着上帝一样的父亲。我虽然对塔拉的遭遇感到同情与赞叹，但我更想知道到底是什么力量能让这样的一个家庭诞生出三个博士。是从小环境磨砺出来的坚韧；是不被世俗束缚的行为？ 我觉得是因为他们从小生活在两个世界中，所以他们能观察世界。面对两个世界的碰撞，能擦出思想的火花。</p>
-<p>我还没有孩子，本无权评论现实的教育，但我观察到这个国家的教育，从以前的把教育扔给老师，到现在的把教育扔还给家长。现在，孩子教育的中心从老师变成了家长，但很多家长又会把这项神圣的责任交给物联网，ipad。还有家长把这个责任当成操控，操控孩子成长为自己想要的样子。</p>
-<p>我们要避免像塔拉这样暴力，封闭的教育，但我们需要有自己的信仰，同时应该让孩子自由地发展他们自己的信仰，只有当两种信仰擦出火花时，我们才能进步，如果我们错了，我们应该学会接受</p>
-<h1 id="教育的答案"><a href="#教育的答案" class="headerlink" title="教育的答案"></a>教育的答案</h1><p>看这本书的前一本正好是《了不起的我》，一本关于自我发展的书；其中有一句话我想我会记住一辈子，“知识的价值不是提供一个确定的答案，而是探索的过程”；同样这本书里也有类似的理解：教育是为了获得不同的视角，教育应该是思想的扩展，视野的开阔，接受教育的人应该变得不那么确定，而不是更确定。</p>
-<p>为什么我对这些话影响深刻呢？记得我刚开始看书的时候，我问一个比我大8岁的工程师，问他你平常看书吗，他给我的回答是“书里的知识都是讲的很有道理的屁话”。当时我觉得说的很有道理，我看的这些书，讲经济，讲心理，读的时候觉得很有道理，但读完，却反而更加迷茫，因为书中没有一个明确的答案。</p>
-<p>这半年多读书的坚持，让我失去了娱乐的时间。就像塔拉接受了教育，但却失去挚爱的家人一样，当然塔拉的经历，在寻找自我的过程中更加坚辛，更加多彩。书中结尾对自我的称呼“转变，蜕变，虚伪，背叛”，被作者称为“教育”。我想教育是不是这么个过程：看山是山，看山不是山，看山是山。也就是说，塔拉面对父亲，哥哥的虐待，从开始的反复相信，反复受伤；到后来对家庭的怒火，不原谅；再到摆脱负罪感，学会接受自己的决定。</p>
+        <h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>前面讲的SOLID是如何构成组件的基本原则，现在我们要讲组件之间应该怎么把它们结合起来构成一个真正的软件。</p>
+<p>组件这个词，如果在我们公司或者广义上的理解(c++)，应该指的是对象。但这本书组件即一个库，像so,DLL，这种部署单元就是组件，因此后续提到组件都是指一个库。</p>
+<p>先思考下我们应该把哪些类组合成一个组件？这就是第一个要讲的<strong>组件聚合</strong></p>
+<ul>
+<li><ol>
+<li>REP：复用/发布等同原则</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>CCP：共同闭包原则</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>CRP：共同复用原则</li>
+</ol>
+</li>
+</ul>
+<p>又是原则，这么复杂？我提炼了下核心：基础(共同的主题，代码复用)+职责单一原则(如果发生修改，应该把所有需要修改的类组合成组件)+接口隔离原则(不应该出现别人只需要依赖它的某几个类而不需要其他类的情况)。当然你会发现SRP实际的项目会非常复杂，我们程序员应该在这三种原则中做一个取舍。</p>
+<p>接下来思考下组件之间应该遵循什么原则？就是第二个要讲的<strong>组件耦合</strong></p>
+<ul>
+<li><ol>
+<li>无依赖原则</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>稳定依赖原则：依赖关系必须指向更稳定的方向</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>稳定抽象原则：一个组件的抽象程度应该与其稳定性保持一致</li>
+</ol>
+</li>
+</ul>
+<p>第一个原则较为重要，简单来讲就是A组件依赖B组件，B组件也依赖A组件，这就是互相依赖，而我们设计时应该避免这种情况，原因就不多讲了。解决方案2种：1.通过SOLID的依赖反转原则；2.通过新加一个组件，让A、B组件都依赖新组件。</p>
 
       
     </div>
@@ -343,15 +366,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/02/01/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/" rel="next" title="架构整洁之道">
+                <i class="fa fa-chevron-left"></i> 架构整洁之道
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/01/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/" rel="prev" title="架构整洁之道">
-                架构整洁之道 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -465,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从小的教育"><span class="nav-number">1.</span> <span class="nav-text">从小的教育</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#教育的答案"><span class="nav-number">2.</span> <span class="nav-text">教育的答案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">1.</span> <span class="nav-text">组件</span></a></li></ol></div>
             
 
           </div>
