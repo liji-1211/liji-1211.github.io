@@ -85,10 +85,12 @@
 <meta property="og:url" content="http://yoursite.com/2020/02/11/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%932/index.html">
 <meta property="og:site_name" content="liji Blog">
 <meta property="og:description" content="组件前面讲的SOLID是如何构成组件的基本原则，现在我们要讲组件之间应该怎么把它们结合起来构成一个真正的软件。 组件这个词，如果在我们公司或者广义上的理解(c++)，应该指的是对象。但这本书组件即一个库，像so,DLL，这种部署单元就是组件，因此后续提到组件都是指一个库。 先思考下我们应该把哪些类组合成一个组件？这就是第一个要讲的组件聚合   REP：复用&#x2F;发布等同原则    CCP：共同闭包原则">
+<meta property="og:image" content="http://yoursite.com/images/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/%E5%B0%96%E5%8F%AB%E6%9E%B6%E6%9E%84.png">
 <meta property="article:published_time" content="2020-02-11T13:30:05.000Z">
-<meta property="article:modified_time" content="2020-02-12T12:24:33.827Z">
+<meta property="article:modified_time" content="2020-02-23T05:22:51.518Z">
 <meta property="article:author" content="liji">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/%E5%B0%96%E5%8F%AB%E6%9E%B6%E6%9E%84.png">
 
 
 
@@ -325,7 +327,7 @@
 </ol>
 </li>
 </ul>
-<p>又是原则，这么复杂？我提炼了下核心：基础(共同的主题，代码复用)+职责单一原则(如果发生修改，应该把所有需要修改的类组合成组件)+接口隔离原则(不应该出现别人只需要依赖它的某几个类而不需要其他类的情况)。当然你会发现SRP实际的项目会非常复杂，我们程序员应该在这三种原则中做一个取舍。</p>
+<p>又是原则，这么复杂？我提炼了下核心：基础(共同的主题，代码复用)+职责单一原则(如果发生修改，应该把所有需要修改的类组合成组件)+接口隔离原则(不应该出现别人只需要依赖它的某几个类而不需要其他类的情况)。当然你会发现SRP实际的项目会非常复杂，我们程序员应该在这三种原则中做一个取舍</p>
 <p>接下来思考下组件之间应该遵循什么原则？就是第二个要讲的<strong>组件耦合</strong></p>
 <ul>
 <li><ol>
@@ -342,6 +344,15 @@
 </li>
 </ul>
 <p>第一个原则较为重要，简单来讲就是A组件依赖B组件，B组件也依赖A组件，这就是互相依赖，而我们设计时应该避免这种情况，原因就不多讲了。解决方案2种：1.通过SOLID的依赖反转原则；2.通过新加一个组件，让A、B组件都依赖新组件。</p>
+<h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><img src="/images/架构整洁之道/尖叫架构.png" alt="尖叫架构" style="zoom:50%;" />
+
+<p>这应该是整本书最核心的一张图，内圈是高层业务策略，外圈是底层机制。还是举个例子吧，比方我们做了一个服务，web服务用的是nginx框架，数据库用的是mysql，做业务时应该脱离nginx，mysql，但nginx必须按照它的规则来实现回调接口，mysql必须写sql语句，因此需要通过适配层，从而隔离框架与业务。而这些组件的依赖关系，应指向内圈，这与数据流是不一致的，至于如何实现这种依赖关系，可以参考前面的依赖反转原则。而这种依赖关系优势体现在把web框架、数据库变成了插件， 让你的软件框架具有了可选项，简单来说就是符合了开闭原则。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><p>看完这本书，罗列一些对我影响最大的点：</p>
+<ol>
+<li>做软件架构时不要想着一步到位，上来就是微服务的架构。应该把细节性的决策推迟延后。以前的思维是做架构就应该考虑到方方面面，在项目前期应该选好用什么web服务框架，用什么数据库。但听了Bob大叔的见解之后，好的设计，应该要延迟这些决定，你可能会想，你到项目后期来搞这些，那不是意味着整个软件都要重构了吗，但好的架构不就是前面软件架构中提到的设计原则吗，延迟决定的是你的外圈机制，好的设计应该是插件式的。</li>
+<li>框架是工具而不是信仰，我以前使用某个框架开发，会把这个框架视为一切，理所当然地认为框架应该包揽一切，我所做的一切都应该迎合框架，这不应该成为你的观点。我们一定要带着怀疑的态度审视每一个框架，避免让框架主导我们架构设计。还是结合上面的这张图，框架应该是最外圈的，应该只是一种工具。</li>
+<li>如果看了这本书导致你以后的设计都按照本书来实现，这是不正确的。书中的观点只能作为参考，面对现实问题，应该找出符合当时场景，考虑团队，技术水平，综合考量的结果。面对这本书的知识，我觉得应该像上图(软件架构一节)，这本书的知识理论类似web、数据库，只能作为一种知识模型(工具)，而现实问题，类似内圈的业务实体，也就是说遇到现实架构问题，书中的知识只能作为参考(插件)，不能喧宾夺主！(跳出现有思维平面，纯自己瞎写)其实对知识的理解，也是一样的，可以套用上面的框架，我们学知识的，就是要不断丰富我们的外圈，扩充我们的知识理论，面对实际问题，这些插件也就随之有用了。</li>
+</ol>
 
       
     </div>
@@ -488,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">1.</span> <span class="nav-text">组件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">1.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件架构"><span class="nav-number">2.</span> <span class="nav-text">软件架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#划重点"><span class="nav-number">3.</span> <span class="nav-text">划重点</span></a></li></ol></div>
             
 
           </div>
